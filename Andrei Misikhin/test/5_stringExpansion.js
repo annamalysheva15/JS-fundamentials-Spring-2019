@@ -23,6 +23,10 @@ let testValues = [
     expected: 'fAAbbSSSpppp'
   },
   {
+    str: 'aaa0Ff2A-2b0.3S 4p',
+    expected: 'aaafAAbbSSSpppp'
+  },
+  {
     str: undefined,
     expected: ''
   },

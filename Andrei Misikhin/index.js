@@ -150,15 +150,16 @@ module.exports = {
   stringExpansion:
 
     function stringExpansion(str = '') {
-      let arr = str.match(/\d[a-zA-Z]+/g);
-      return arr ? 
-        arr
-        .map(
-          item => 
-            item[1].repeat(+item[0]) + item.slice(2)
-        )
-        .join('')
-        : str;
+      let arr = str.match(/(^[a-z]+)|(\d[a-z]+)/gim);
+      return arr
+        ? arr.map(
+          (item, index) => 
+            !index && item.match(/^[a-z]+/gim)
+            ? item
+            : item[1].repeat(+item[0]) + item.slice(2)
+          )
+          .join('')
+        : str
     },
 
 
