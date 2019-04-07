@@ -16,7 +16,7 @@ function stringExpansion(str) {
             res += str[i];
         }
     }
-    console.log(res);
+    return res;
 }
 
 stringExpansion('3D2a5d2f');
