@@ -310,15 +310,14 @@ module.exports = {
   myBind:
 
     Function.prototype.myBind =
-      function () {
+      function (context, ...firstArgs) {
         const func = this;
-        const context = arguments[0];
-        const firstArgs = [].slice.call(arguments, 1);
-        return function () {
-          const args = firstArgs.concat([].slice.call(arguments));
+        return (...secondArgs) => {
+          const args = firstArgs.concat(secondArgs);
           return func.apply(context, args);
-        };
+        }
       }
+      
 
 }
 
