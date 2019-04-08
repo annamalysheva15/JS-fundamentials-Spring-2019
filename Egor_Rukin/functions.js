@@ -14,11 +14,11 @@ function splitAndMerge(str, sep) {
 // 2) Write a function convert
 
   //doesn't work in IE
-function convert2(obj) {
+function convert1(obj) {
   return Object.entries(obj);
 };
   //this should work just fine everywhere
-function convert1 (obj) {
+function convert2 (obj) {
   var keys = Object.keys(obj),
       i = keys.length,
       newArray = new Array(i);
@@ -33,7 +33,7 @@ function toCamelCase(str) {
 	if (!(arguments.length && typeof str === "string" && str)) {
     return "Enter non-empty string";
   }
-	return str.replace(/[_-](\w)/gi,
+	return str.replace(/[_-]([a-zа-я])/gi,
     function(match, p1){return p1.toUpperCase()}
   );
 }
@@ -49,12 +49,13 @@ function splitReverse (str) {
             .join(" ");
 };
 
+
 // 5) Write a function stringExpansion
 function stringExpansion(string) {
   if (!(arguments.length && typeof str === "string" && str)) {
     return "Enter non-empty string";
   };
-  return string.replace(/(\d)+([a-z])/gi,
+  return string.replace(/(\d)+([a-zа-я])/gi,
     function(match, p1, p2){return p2.repeat(p1)}
   );
 };
@@ -81,17 +82,16 @@ function smallest() {
 
 
 // 7) Write function transform that will transform
-// array of numbers to array of functions
+// an array of numbers into array of functions
 function transform(array){
-	return array.map(function (num){
-		return function(){
-      return num;
-    };
-	});
+  if (!(Array.isArray(array) && array.length)) {
+	   return "non empty array of arguments is needed";
+  };
+	return array.map( function (num){ return function(){return num} } );
 };
 
 
-// 8) Write function sum.(use recursion)
+// 8) Write function sum (use recursion)
 function recSum() {
 	if (!arguments.length) return "at least 1 argument is needed";
 	if (arguments.length > 1){
@@ -103,6 +103,7 @@ function recSum() {
   };
 };
 
+
 // 9) Write function countDown
 function countDown(num) {
   setTimeout(function f(){
@@ -112,3 +113,17 @@ function countDown(num) {
     } else return;
   }, 0);
 };
+
+
+// 10) Write a polyfill for a .bind() function
+// and save it in Function.prototype.myBind().
+Function.prototype.myBind = function() {
+  if (!arguments.length) return "Usage fun.myBind(context[,arg1[,arg2[,…]]])";
+  var context = arguments[0],
+      self = this,
+      boundArgs = [].slice.call(arguments, 1);
+  return function() {
+    var args = boundArgs.concat([].slice.call(arguments));
+    return self.apply(context, args);
+  };
+}
