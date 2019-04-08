@@ -1,21 +1,9 @@
 function smallest() {
-    let min = 65536;
-    for (var i = 0; i < arguments.length; i++) {
-        if(min>arguments[i]){
-            min = arguments[i];
-        }
-    }
-    return min;
+    return Math.min.apply(null,arguments);
 }
 
 function largest() {
-    let max = -65536;
-    for (var i = 0; i < arguments.length; i++) {
-        if(max<arguments[i]){
-            max = arguments[i];
-        }
-    }
-    return max;
+    return Math.max.apply(null,arguments);
 }
 
 console.log(largest(2, 0.1, -5, 100, 3));
