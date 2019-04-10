@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<script>
+		function large() {
+			var array = Array.prototype.slice.call(arguments);
+			var largest = 0;
+			for (var i = 0; i < array.length; i++) {
+				if(array[i] > largest) {
+					largest = array[i];
+				}
+			}
+			return largest;
+		}
+
+		function small() {
+			var array = Array.prototype.slice.call(arguments);
+			var smallest = 0;
+			for (var i = 0; i < array.length; i++) {
+				if(array[i] < smallest) {
+					smallest = array[i];
+				}
+			}
+			return smallest;
+		}		
+
+		large(3,4,1,2,4,66,75,6);
+
+	</script>
+	
+</body>
+</html>
