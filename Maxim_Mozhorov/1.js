@@ -1,14 +1,10 @@
-
 function splitAndMerge(str,sp) {
-    const splitArray = str.split(sp);
-    let resArray='';
+    const splitArray = str.split(" ");
     for(let i=0; i<splitArray.length;i++){
-        resArray += splitArray[i].split('').join(sp);
+        splitArray[i] = splitArray[i].split('').join(sp);
     }
-
-
-    return resArray;
+    return splitArray.join(" "); //в прошлый раз объединял не с помощью пробела, а с поиощью sp, понял что в задании описан пробел
 }
-const str = "Hello, World!";
-const sp = 'o';
-console.log(splitAndMerge("Hello World!",","));
+
+
+splitAndMerge("Hello World!",",");
