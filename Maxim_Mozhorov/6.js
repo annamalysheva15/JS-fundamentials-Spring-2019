@@ -1,9 +1,19 @@
 function smallest() {
-    return Math.min.apply(null,arguments);
+    if (arguments.length !=0){
+        return Math.min.apply(null,arguments);
+    }
+    else {
+        return false;
+    }
 }
 
 function largest() {
-    return Math.max.apply(null,arguments);
+    if (arguments.length !=0){
+        return Math.max.apply(null,arguments);
+    }
+    else {
+        return false;
+    }
 }
 
 console.log(largest(2, 0.1, -5, 100, 3));
