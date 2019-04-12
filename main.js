@@ -53,11 +53,7 @@ console.log(objectToArray(someObject));
 function toCamelCase(str) {
 	const camelCased = str.split("");
 
-	const spliceAndUppercase = function() {
-		this.splice(i, 1);
-		this[i] = this[i].toUpperCase();
-	};
-	for (var i = 0; i < camelCased.length; i++) {
+	for (let i = 0; i < camelCased.length; i++) {
 		switch (camelCased[i]) {
 			case "_":
 				spliceAndUppercase.apply(camelCased);
@@ -72,7 +68,13 @@ function toCamelCase(str) {
 				camelCased[i] = camelCased[i].toLowerCase();
 				break;
 		}
+
+		function spliceAndUppercase() {
+			this.splice(i, 1);
+			this[i] = this[i].toUpperCase();
+		}
 	}
+
 	return camelCased.join("");
 }
 
@@ -84,3 +86,27 @@ console.log(toCamelCase("THE=STEALTH=WARRIOR"));
 // 4) Write a function that takes a sentence (string)
 // and reverses each word in the sentence. Example:
 // " A fun little challenge! " => " A nuf elttil !egnellahc "
+
+function stringReverser(string) {
+	const newArray = string.split("");
+	const reversedString = [];
+
+	for (let i = newArray.length - 1; i >= 0; i--) {
+		reversedString.push(newArray[i]);
+	}
+
+	return reversedString.join("");
+}
+
+console.log("4) reverse each word in the sentence: ");
+console.log(stringReverser(" A fun little challenge! "));
+
+// 5) Write a function stringExpansion Given a string that includes
+// alphanumeric characters ('3a4B2d') return the expansion of that string:
+// The numeric values represent the occurance of each letter preceding that numeric value.
+// There should be no numeric characters in the final string.
+// Empty strings should return an empty string.
+
+// const stringExpansion = function() {
+
+// }
