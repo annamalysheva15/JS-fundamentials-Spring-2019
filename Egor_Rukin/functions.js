@@ -1,8 +1,8 @@
 // 1) Write a function splitAndMerge
 function splitAndMerge(str, sep) {
-  if (arguments.length != 2 &&
+  if (!(arguments.length == 2 &&
       typeof str === "string" &&
-      typeof sep == "string") {
+      typeof sep === "string")) {
     return "Usage splitAndMerge(string, separator)";
   }
   return str.split(" ")
@@ -51,11 +51,11 @@ function splitReverse (str) {
 
 
 // 5) Write a function stringExpansion
-function stringExpansion(string) {
+function stringExpansion(str) {
   if (!(arguments.length && typeof str === "string" && str)) {
     return "Enter non-empty string";
   };
-  return string.replace(/(\d)+([a-zа-я])/gi,
+  return str.replace(/(\d)+([a-zа-я])/gi,
     function(match, p1, p2){return p2.repeat(p1)}
   );
 };
@@ -92,11 +92,11 @@ function transform(array){
 
 
 // 8) Write function sum (use recursion)
-function recSum() {
+function sum() {
 	if (!arguments.length) return "at least 1 argument is needed";
 	if (arguments.length > 1){
 		var last = [].pop.call(arguments);
-		return last + recSum.apply(recSum, arguments);
+		return last + sum.apply(sum, arguments);
 	}
 	else {
 		return arguments[0];
