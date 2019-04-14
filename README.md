@@ -1,3 +1,19 @@
+Explanations
+======
+
+... there is tests files in *test* folder
+... packacge uses *Mocha* and *chai* packages
+
+to install packacges run
+``` yarn install ```
+
+to run tests run
+``` yarn test ```
+
+
+#Task itself
+
+```
 # JS-fundamentials-Spring-2019
 
 Important: You shouldn't use global variables
@@ -57,7 +73,7 @@ Example:
 countDown(3); // 3 2 1 0
 
 10) Write a polyfill for a .bind() function and save it in Function.prototype.myBind(). myBind() should work in an exact same way as the usual bind() - take context as a first parameter and the list of arguments separated by comma.
-Hint: play with the function in Function.prototype and see what this points to inside it. Your code should look like: Function.prototype.myBind = function () { 
+Hint: play with the function in Function.prototype and see what this points to inside it. Your code should look like: Function.prototype.myBind = function () {
 // your code here
 }
 
@@ -65,3 +81,4 @@ Example:
 function addPropToNumber(number) { return this.prop + number; }
 var bound = addPropToNumber.myBind({ prop: 9 });
 bound(1) // 10
+```
