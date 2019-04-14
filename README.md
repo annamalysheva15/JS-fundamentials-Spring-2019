@@ -1,15 +1,19 @@
 Explanations
 ======
 
-... there is tests files in *test* folder
-... packacge uses *Mocha* and *chai* packages
+   there is tests files in *test* folder
 
-to install packacges run
+   package uses *Mocha* and *chai* packages
+
+to install packages run
+
 ``` yarn install ```
 
 to run tests run
+
 ``` yarn test ```
 
+======
 
 #Task itself
 
