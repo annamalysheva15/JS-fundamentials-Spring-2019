@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Task</title>
+  <style>
+    body {
+      margin: 0 auto
+    }
+
+    h2 {
+      margin: 0
+    }
+
+    .task {
+      width: 1024px;
+      margin: 0 auto;
+    }
+
+    .task__list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+
+      margin: 0;
+      padding-left: 0;
+      padding: 20px;
+      list-style: none
+    }
+
+    .task__item {
+      padding: 10px;
+      margin-bottom: 20px;
+      width: 48%;
+      min-height: 300px;
+      border-radius: 10px;
+      box-sizing: border-box;
+      box-shadow: 1px 0 10px silver;
+    }
+
+    .task__item:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="task">
+    <ul class="task__list">
+      <!-- one -->
+      <li class="task__item" id="split-and-merge">
+        <h2>Split and merge</h2>
+        <p>Input any message and separator</p>
+        <p class="task__example">
+          "My name is John" ; " " => "M y n a m e i s J o h n" <br/>
+          "Hello World!" ; "," => "H,e,l,l,o W,o,r,l,d,!"
+        </p>
+        <input id="split-text" type="text" placeholder="message">
+        <input id="split-sep" type="text" placeholder="separator">
+        <button class="button" type="button">Split and merge</button>
+        <p>Result:
+          <span>...</span>
+        </p>
+      </li>
+      <!-- two -->
+      <li class="task__item" id="convert-into-array">
+        <h2>Convert a hash into an array</h2>
+        <p>
+          {name: 'Jeremy', age: 24, role: 'Software Engineer'}
+        </p>
+        <button class="button" type="button">Convert</button>
+        <p>Result:
+          <span>...</span>
+        </p>
+      </li>
+      <!-- three -->
+      <li class="task__item" id="convert-to-camel-case">
+        <h2>Convert dash/underscore delimited words into camel-case</h2>
+        <p>Input dash/underscore delimited words</p>
+        <p class="task__example">
+          "the-stealth-warrior" => "theStealthWarrior"<br/>
+          "The_Stealth_Warrior" => "TheStealthWarrior"
+        </p>
+        <input id="to-camel" type="text">
+        <button class="button" type="button">Convert</button>
+        <p>Result:
+          <span>...</span>
+        </p>
+      </li>
+      <!-- four -->
+      <li class="task__item" id="reverce-words">
+        <h2>Reverses each word in the sentence</h2>
+        <p class="task__example">
+          "A fun little challenge!" => "A nuf elttil !egnellahc"
+        </p>
+        <input id="reverse-text" type="text">
+        <button class="button" type="button">Reverse</button>
+        <p>Result:
+          <span>...</span>
+        </p>
+      </li>
+      <!-- five -->
+      <li class="task__item" id="numbers-to-letters">
+        <h2>Numbers to letters</h2>
+        <p>
+          String that includes alphanumeric characters ('3a4B2d') return the expansion of that string: The numeric values represent the occurance of each letter preceding that numeric value.
+        </p>
+        <p class="task__example">
+          '3D2a5d2f' => 'DDDaadddddff' <br/>
+          '3d332f2a' => 'dddffaa' <br/>
+          'abcde' => 'abcde'
+        </p>
+        <input id="numbers-letters-input" type="text">
+        <button class="button" type="button">Represent</button>
+        <p>Result:
+          <span>...</span>
+        </p>
+      </li>
+      <!-- six -->
+      <li class="task__item" id="smallest-largest">
+        <h2>Largest and smallest numbers</h2>
+        <p class="task__example">
+          largest(2, 0.1, -5, 100, 3) // 100 <br/>
+          smallest(2, 0.1, -5, 100, 3) // -5
+        </p>
+        <p>Input several numbers separated by comma</p>
+        <input id="small-large" type="text">
+        <button class="button button-large" type="button">Largest</button>
+        <button class="button button-small" type="button">Smallest</button>
+        <p>Result:
+          <span>...</span>
+        </p>
+      </li>
+      <!-- seven -->
+      <li class="task__item" id="num-to-func">
+        <h2>Transform array of numbers to array of functions</h2>
+        <p class="task__example">
+          const baseArray = [10, 20, 30, 40, 50];<br/>
+          const newArray = transform(baseArray);<br/>
+          newArray[3](); // should return 40
+        </p>
+        <p>
+          Click to check<br/> 
+          newArray[4](); // should return 50  
+        </p>
+        <button class="button" type="button">transform</button>
+        <p>Result:
+          <span>...</span>
+        </p>
+      </li>
+      <!-- eight -->
+      <li class="task__item" id="sum">
+        <h2>Sum of  arguments</h2>
+        <p class="task__example">
+          1,3,5,7; //should return 16
+        </p>
+        <p>Input several numbers separated by comma</p>
+        <input id="sum-input" type="text">
+        <p>Result:
+          <span>...</span>
+        </p>
+        <button class="button" type="button">Sum</button>
+      </li>
+      <!-- nine -->
+      <li class="task__item" id="countdown">
+        <h2>Counter from your num to zero</h2>
+        <p class="task__example">
+          3 => 3 2 1 0
+        </p>
+        <p>Input number</p>
+        <input id="countdown-input" type="text">
+        <p>Result:
+          <span>...</span>
+        </p>
+        <button class="button" type="button">Count</button>
+      </li>
+      <!-- ten -->
+      <li class="task__item" id="bind">
+        <h2>Bind function</h2>
+        <p class="task__example">In scripts.js =)</p>
+      </li>
+    </ul>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
