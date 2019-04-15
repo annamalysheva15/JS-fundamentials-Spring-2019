@@ -7,6 +7,29 @@
 </head>
 <body>
 	<script>
+		/* -- 1 -- */ 
+		function final(str, sp){
+			var result = str.replace(' ', ',');
+			var splits = result.split('');
+			var withSym = new Array;
+			for(i = 0; i < splits.length; i++){
+				withSym.push(splits[i] + ' ');
+			}
+			var done = withSym.join(sp);
+			return done;
+		}
+
+		/* -- 2 -- */
+
+		function convert(obj){
+			var final = Object.keys(obj).map(function(key){
+				return [key, obj[key]];
+			})
+
+			return final;
+		}
+
+		/* -- 6 -- */
 		function large() {
 			var array = Array.prototype.slice.call(arguments);
 			var largest = 0;
@@ -31,7 +54,11 @@
 
 		large(3,4,1,2,4,66,75,6);
 
+		
+
+
+
 	</script>
-	
+
 </body>
 </html>
