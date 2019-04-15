@@ -54,7 +54,15 @@
 
 		large(3,4,1,2,4,66,75,6);
 
-		
+		/* -- 9 -- */
+
+		function run(a){
+			setTimeout(function(){
+				if(a >= 0){
+					console.log(a);
+					run(a - 1)}
+				},1000)
+		};
 
 
 
