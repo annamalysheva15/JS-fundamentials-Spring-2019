@@ -1,12 +1,4 @@
 // 1) Write a function splitAndMerge
-// Function accept 2 parameters:str and sp. str is a sentence. sp is a char as separator.
-// First we need to divide the sentence into words(Use separator space);
-// and then divide each word into characters(Use separator empty string);
-// and then merge each characters with the specified sp;
-// at last merge all the words(Use separator space) and return it.
-// Example:
-// splitAndMerge("My name is John"," ") should return "M y n a m e i s J o h n"
-// splitAndMerge("Hello World!",",") should return "H,e,l,l,o W,o,r,l,d,!"
 
 const splitAndMerge = function(str, sp) {
 	const separatedWords = str.split(" ");
@@ -22,12 +14,8 @@ console.log("1) Function splitAndMerge:");
 console.log(splitAndMerge("My name is John", " "));
 console.log(splitAndMerge("Hello World!", ","));
 console.log(splitAndMerge("Thereisnospoon", "0"));
-
-// 2) Write a function convert
-// Convert a hash into an array. Nothing more, Nothing less.
-// {name: 'Jeremy', age: 24, role: 'Software Engineer'}
-// should be converted into
-// [["name", "Jeremy"], ["age", 24], ["role", "Software Engineer"]]
+console.log("123");
+// 2) Hash into array
 
 const someObject = {
 	name: "Jeremy",
@@ -44,11 +32,7 @@ const objectToArray = function(obj) {
 console.log("2) Converts hash into array:");
 console.log(objectToArray(someObject));
 
-// 3) Complete the method/function so that it converts dash/underscore
-// delimited words into camel casing.
-// The first word within the output should be capitalized only if
-// the original word was capitalized.
-// Example:
+// 3) To camelCase
 
 function toCamelCase(str) {
 	const camelCased = str.split("");
@@ -83,9 +67,7 @@ console.log(toCamelCase("the-stealth-warrior"));
 console.log(toCamelCase("The_Stealth_Warrior"));
 console.log(toCamelCase("THE=STEALTH=WARRIOR"));
 
-// 4) Write a function that takes a sentence (string)
-// and reverses each word in the sentence. Example:
-// " A fun little challenge! " => " A nuf elttil !egnellahc "
+// 4) Reverse string
 
 function stringReverser(string) {
 	const newArray = string.split("");
@@ -101,12 +83,47 @@ function stringReverser(string) {
 console.log("4) reverse each word in the sentence: ");
 console.log(stringReverser(" A fun little challenge! "));
 
-// 5) Write a function stringExpansion Given a string that includes
-// alphanumeric characters ('3a4B2d') return the expansion of that string:
-// The numeric values represent the occurance of each letter preceding that numeric value.
-// There should be no numeric characters in the final string.
-// Empty strings should return an empty string.
+// 5) Write a function stringExpansion
 
-// const stringExpansion = function() {
+function stringExpansion(string) {
+	let expandedString = "";
+	for (let i = 0; i < string.length; i++) {
+		if (isNaN(Number(string[i]))) {
+			if (isNaN(Number(string[i - 1]))) {
+				expandedString += string[i];
+			} else {
+				for (let j = 0; j < string[i - 1]; j++) {
+					expandedString += string[i];
+				}
+			}
+		}
+	}
+	return expandedString;
+}
 
-// }
+console.log("5) function stringExpansion: ");
+console.log(stringExpansion("3D2a5d2f"));
+console.log(stringExpansion("3d3452F2aaa"));
+console.log(stringExpansion("abcde"));
+
+// 6) Write largest and smallest functions.
+
+function largest(...args) {
+	return Math.max(...args);
+}
+
+function smallest(...args) {
+	return Math.min(...args);
+}
+
+console.log("6) largest and smallest functions: ");
+console.log(`largest: ${largest(2, 0.1, -5, 100, 3)}`);
+console.log(`smallest: ${smallest(2, 0.1, -5, 100, 3)}`);
+
+// 7) Write function transform that will transform array of numbers to array of functions
+// that will return value from a base array.
+// Example:
+// const baseArray = [10, 20, 30, 40, 50];
+// const newArray = transform(baseArray);
+// newArray[3](); // should return 40
+// newArray[4](); // should return 50
