@@ -54,6 +54,23 @@
 
 		large(3,4,1,2,4,66,75,6);
 
+		/* -- 8 -- */
+
+		function run(...a){
+			var sum = 0;
+			var b = a.length;
+			function add(b){
+				if(b > 0){
+					sum = sum + a[b];
+					console.log(sum);
+					b = b - 1;
+					add(b);
+				}
+
+			}
+			return console.log(sum);
+		};
+
 		/* -- 9 -- */
 
 		function run(a){
