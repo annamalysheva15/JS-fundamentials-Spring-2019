@@ -29,6 +29,51 @@
 			return final;
 		}
 
+		/* -- 3 -- */
+
+		var exchange = function(str) {
+			var total = '';
+			for (i = 0; i < str.length; i++) {
+				if(str[i] == '-' || str[i] == '_') {
+					total = total + str[i + 1].toUpperCase();
+					i++;
+				} else if(i == 0){
+					total = total + str[i].toUpperCase();
+				} else {
+					total = total + str[i];
+				}
+			}
+			return total;
+		}
+
+		/* -- 4 -- */
+
+		var reverseWord = function(str){
+			var arr = [];
+			var word = '';
+			for(i = 0; i <= str.length; i++){
+				if(str[i] != ' ' && i < str.length){
+					word = word + str[i];	
+				} else {
+					arr.push(word);
+					word = '';
+				}
+			}
+			var total = [];
+			for(i = 0; i < arr.length; i++){
+				var b = arr[i].split('').reverse().join('');
+
+				total.push(b);
+			}
+			var result = '';
+
+			for(i = 0; i < total.length; i++){
+				i != total.length - 1 ? result = result + total[i] + ' ' : result = result + total[i];
+			}
+
+			return result;
+		}
+
 		/* -- 6 -- */
 		function large() {
 			var array = Array.prototype.slice.call(arguments);
@@ -54,23 +99,20 @@
 
 		large(3,4,1,2,4,66,75,6);
 
-		/* -- 8 -- */
+		/* -- 8 --  ?????? */
 
 		function run(...a){
-			var sum = 0;
 			var b = a.length;
 			function add(b){
 				if(b > 0){
-					sum = sum + a[b];
-					console.log(sum);
-					b = b - 1;
-					add(b);
+					a[0] + a[b];
+					console.log(a[0]);
+					add(b - 1);
+				} else {
+					return a[0] ;
 				}
-
 			}
-			return console.log(sum);
 		};
-
 		/* -- 9 -- */
 
 		function run(a){
