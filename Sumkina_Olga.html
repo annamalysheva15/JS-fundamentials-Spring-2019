@@ -97,7 +97,19 @@
 			return smallest;
 		}		
 
-		large(3,4,1,2,4,66,75,6);
+		/* -- 7 -- */ // transform(arr)[0] - выведется результат функции с индексом 0 в итоговом массиве
+
+		function transform (arr){
+			var result = [];
+			for(var i = 0; i < arr.length; i++) {
+				var foo = function(){
+					return arr[i];
+				}
+				result.push(foo());
+			}
+			return result;
+		} 
+
 
 		/* -- 8 --  ?????? */
 
