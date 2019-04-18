@@ -1,14 +1,20 @@
 # JS-fundamentials-Spring-2019
-- [EPAM JS fundamentals](https://aleksandrgorodetskii.github.io/JS-fundamentials-Spring-2019/)  
-- To install dependencies, execute in project folder:
+
+[EPAM JS fundamentals](https://aleksandrgorodetskii.github.io/JS-fundamentials-Spring-2019/)  
+
+To install dependencies, execute in project folder:
+
 
     npm i
 
-- To run Jest tests, execute
+
+To run Jest tests, execute
+
 
     npm test
 
-- Or to run Majestic GUI for Jest - execute:
+
+Or to run Majestic GUI for Jest - execute:
 
     npx majestic
 
