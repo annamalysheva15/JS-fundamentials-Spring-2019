@@ -1,6 +1,6 @@
 // 1) Write a function splitAndMerge
 
-const splitAndMerge = function(str, sp) {
+const splitAndMerge = (str, sp) => {
   const separatedWords = str.split(" ");
   let finalSentence = "";
   for (let i = 0; i < separatedWords.length; i++) {
@@ -20,8 +20,7 @@ console.log("123");
 const someObject = {
   name: "Jeremy",
   age: 24,
-  role: "Software Engineer",
-  hobbies: ["tennis", "laying on sofa"]
+  role: "Software Engineer"
 };
 
 const objectToArray = function(obj) {
@@ -57,9 +56,13 @@ function toCamelCase(str) {
       this.splice(i, 1);
       this[i] = this[i].toUpperCase();
     }
-  }
-
-  return camelCased.join("");
+	}
+	console.log(camelCased[0])
+	console.log(str[0])
+	camelCased[0] === str[0] 
+		? console.log('asdasdasd')
+		: camelCased[0].toUpperCase()
+		return camelCased.join("");
 }
 
 console.log("3) Converts words into camelcase :");
@@ -182,3 +185,5 @@ function addPropToNumber(number) {
 const bound = addPropToNumber.myBind({ prop: 9 });
 
 console.log(`10) Polyfill for a .bind() : ${bound(1)}`);
+
+module.exports = { splitAndMerge, objectToArray, someObject, toCamelCase };
