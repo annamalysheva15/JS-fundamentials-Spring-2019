@@ -57,11 +57,7 @@ function toCamelCase(str) {
       this[i] = this[i].toUpperCase();
     }
 	}
-	console.log(camelCased[0])
-	console.log(str[0])
-	camelCased[0] === str[0] 
-		? console.log('asdasdasd')
-		: camelCased[0].toUpperCase()
+
 		return camelCased.join("");
 }
 
