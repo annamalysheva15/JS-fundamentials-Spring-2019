@@ -74,6 +74,16 @@
 			return result;
 		}
 
+		/* -- 5 -- */
+
+		var double = function(str){
+			var regexp = /(\d)([^\d])*/g;
+			return str.replace(regexp, function(entry){
+				return entry.slice(1).repeat(entry[0]);
+			})	
+			
+		}
+
 		/* -- 6 -- */
 		function large() {
 			var array = Array.prototype.slice.call(arguments);
@@ -97,7 +107,8 @@
 			return smallest;
 		}		
 
-		/* -- 7 -- */ // transform(arr)[0] - выведется результат функции с индексом 0 в итоговом массиве
+		/* -- 7 -- */ 
+		// transform(arr)[0] - выведется результат функции с индексом 0 в итоговом массиве
 
 		function transform (arr){
 			var result = [];
@@ -135,6 +146,18 @@
 				},1000)
 		};
 
+		/* -- 10 -- */
+
+		var bind = function(fn, context) {
+
+			var bindArgs = [].slice.call(arguments, 2);
+			return function() {
+
+				var fnArgs = [].slice.call(arguments);
+
+				return fn.apply(context, bindArgs.concat(fnArgs));
+			};
+		};
 
 
 	</script>
