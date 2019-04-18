@@ -150,6 +150,35 @@ console.log("8) Function sum: ");
 console.log(sum(1, 3, 5, 7));
 console.log(sum(5, -27, -5, 7));
 
-// 9) Write function countDown. Function expects number and logs values one by one till zero with one second delay.
-// Example:
-// countDown(3); // 3 2 1 0
+// 9) Write function countDown.
+
+function countDown(seconds) {
+  let counter = seconds;
+  const tickTacking = setInterval(function() {
+    console.log(counter);
+    counter--;
+    if (counter < 0) {
+      clearInterval(tickTacking);
+      console.log(`9) Function countDown: ${seconds} seconds have passed!`);
+    }
+  }, 1000);
+}
+
+countDown(3);
+
+// 10) Write a polyfill for a .bind()
+
+Function.prototype.myBind = function(func) {
+  let context = this;
+  return function() {
+    return context.apply(func, arguments);
+  };
+};
+
+function addPropToNumber(number) {
+  return this.prop + number;
+}
+
+const bound = addPropToNumber.myBind({ prop: 9 });
+
+console.log(`10) Polyfill for a .bind() : ${bound(1)}`);
