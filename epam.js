@@ -56,9 +56,13 @@ function toCamelCase(str) {
       this.splice(i, 1);
       this[i] = this[i].toUpperCase();
     }
-	}
+  }
 
-		return camelCased.join("");
+  camelCased[0].toLowerCase() !== str[0]
+    ? (camelCased[0] = camelCased[0].toUpperCase())
+    : false;
+
+  return camelCased.join("");
 }
 
 console.log("3) Converts words into camelcase :");
