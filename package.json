@@ -1,0 +1,11 @@
+{
+  "name": "js-fundamentials-spring-2019",
+  "version": "1.0.0",
+  "description": "JS Challenges from EPAM JS Fundamentals Course (Spring 2019)",
+  "main": "solutions.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Tatiana Dmitrieva",
+  "license": "ISC"
+}
