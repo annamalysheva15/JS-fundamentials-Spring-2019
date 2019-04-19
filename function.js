@@ -76,7 +76,7 @@ console.log(reverseWord('A fun little challenge!'));
 
 /* -- TASK 5 -- */
 
-function stringExpension(str){
+function stringExpension(str = 'empty string'){
 	var regexp = /(\d)([^\d])*/g;
 	return str.replace(regexp, function(entry){
 		return entry.slice(1).repeat(entry[0]);
@@ -87,6 +87,8 @@ function stringExpension(str){
 console.log(stringExpension('3D2a5d2f'));
 console.log(stringExpension('3d332f2a'));
 console.log(stringExpension('abcde'));
+console.log(stringExpension());
+
 
 /* -- TASK 6 -- */
 
