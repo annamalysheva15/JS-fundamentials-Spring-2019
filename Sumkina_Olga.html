@@ -81,7 +81,7 @@
 			return str.replace(regexp, function(entry){
 				return entry.slice(1).repeat(entry[0]);
 			})	
-			
+
 		}
 
 		/* -- 6 -- */
@@ -122,20 +122,14 @@
 		} 
 
 
-		/* -- 8 --  ?????? */
+		/* -- 8 --  */
 
-		function run(...a){
-			var b = a.length;
-			function add(b){
-				if(b > 0){
-					a[0] + a[b];
-					console.log(a[0]);
-					add(b - 1);
-				} else {
-					return a[0] ;
-				}
-			}
-		};
+		function sum(...arg){
+			if(arg.length == 1) return arg[0]
+				console.log(arg[0]);
+			console.log(arg.slice(1));
+			return arg[0] + sum(...arg.slice(1));
+		}
 		/* -- 9 -- */
 
 		function run(a){
