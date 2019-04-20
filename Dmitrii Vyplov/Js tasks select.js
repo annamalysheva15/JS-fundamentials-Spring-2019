@@ -48,7 +48,8 @@ function reverse(str) {
 function stringExpansion(str) {
   str = String(str);
 
-  let arr = str.match(/\d?[a-z]/ig),
+  let reg = /\d?[a-z]/ig
+      arr = str.match(reg),
       result = '';
 
   arr.forEach(element => {if(element.length != 1) 
@@ -58,3 +59,27 @@ function stringExpansion(str) {
 
   return result;
 }
+
+// Task 6
+
+function largest() {
+  return Math.max.apply(null, arguments);
+}
+
+function smallest() {
+  return Math.min.apply(null, arguments);
+}
+
+// Task 7
+
+function transform(arr) {
+  return arr.map(num => {return function() {return num}});
+}
+
+// Task 8
+
+let sum = (...args) => (args.length === 0) ? 0 : args[0] + sum(...args.slice(1));
+
+// Task 9
+
+// Task 10
