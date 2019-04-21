@@ -82,4 +82,20 @@ let sum = (...args) => (args.length === 0) ? 0 : args[0] + sum(...args.slice(1))
 
 // Task 9
 
+function countDown(n) {
+  var timerId = setInterval(function() {
+    console.log(n);
+    if (n == 0) clearInterval(timerId);
+    n--;
+  }, 1000);
+}
+
 // Task 10
+
+Function.prototype.myBind = function (context, ...args) {
+    let cont = this;
+    return (...anotherArgs) => {
+        let param = args.concat(anotherArgs);
+        return cont.apply(context, param);
+    };
+};
