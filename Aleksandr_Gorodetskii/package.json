@@ -1,0 +1,25 @@
+{
+  "name": "JS-fundamentials-Spring-2019",
+  "version": "1.0.0",
+  "description": "Important: You shouldn't use global variables\r 1) Write a function splitAndMerge\r Function accept 2 parameters:str and sp. str is a sentence. sp is a char as separator. First we need to divide the sentence into words(Use separator space); and then divide each word into characters(Use separator empty string); and then merge each characters with the specified sp; at last merge all the words(Use separator space) and return it.",
+  "main": "epam.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AleksandrGorodetskii/JS-fundamentials-Spring-2019.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AleksandrGorodetskii/JS-fundamentials-Spring-2019/issues"
+  },
+  "homepage": "https://github.com/AleksandrGorodetskii/JS-fundamentials-Spring-2019#readme",
+  "devDependencies": {
+    "jest": "^24.7.1",
+    "majestic": "^1.4.1"
+  },
+  "dependencies": {}
+}
